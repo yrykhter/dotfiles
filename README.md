@@ -2,7 +2,8 @@
 
 ## Tmux
 
-|--- |---|
+|Syntax|Description|
+|-------- |---------|
 |C-a|prefix|
 |prefix r| reload  .tmux.conf|
 |C-g| horizontal splits|
