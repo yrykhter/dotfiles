@@ -1,2 +1,6 @@
-# my dotfiles for vim and zsh without factoring
-## add for check
+# Key bindings for dotfiles
+
+## Tmux
+
+|C-w|create new window|
+
