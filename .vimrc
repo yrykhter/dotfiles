@@ -1,52 +1,65 @@
-" Don't try to be vi compatible
-set nocompatible
-
-filetype plugin indent on
-" Color scheme (terminal)
-set t_Co=256
-set background=dark
-
-" colorscheme monokai 
-
-" Helps force plugins to load correctly when it is turned back on below
-filetype off
-
 " Plugins 
 
 call plug#begin('~/.vim/plugged')
 
-" colorscheme
-Plug 'morhetz/gruvbox'
-Plug 'tomasr/molokai'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
+" colorschemes
 Plug 'sickill/vim-monokai'
-Plug 'dracula/vim'
+Plug 'morhetz/gruvbox'  
+Plug 'mhartington/oceanic-next'  
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'ayu-theme/ayu-vim'
+Plug 'https://github.com/rafi/awesome-vim-colorschemes' 
 
-Plug 'rosenfeld/conque-term'
-" Plug 'klen/python-mode'	  
-" Plug 'davidhalter/jedi-vim' 	
-" Plug 'mitsuhiko/vim-jinja'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'bling/vim-airline'
-Plug 'mhinz/vim-startify'
-Plug 'matze/vim-move'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'hashivim/vim-terraform'
+Plug 'bling/vim-airline' " Status bar
+Plug 'mhinz/vim-startify' " Start screen for Vim
+Plug 'matze/vim-move' " Swappint hte line above or down
+Plug 'airblade/vim-gitgutter' " Git plugin for git diff
+Plug 'jiangmiao/auto-pairs' " Auto pairs for brackets and quotes
+Plug 'scrooloose/nerdtree' " NerdTree
+Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
+Plug 'ryanoasis/vim-devicons' " Developer Icons
+Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
+Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
+Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'hashivim/vim-terraform' " Terraform plugin
+Plug 'juliosueiras/vim-terraform-completion' " Terraform auto-completion plugin
+Plug 'junegunn/fzf.vim' " Searching through directories
 
-Plug 'ryanoasis/vim-devicons'
+" Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 
 call plug#end()
 
-" Uncomment to use dracula theme as a default
-" color dracula
+colorscheme gruvbox
+" colorscheme OceanicNext
+" let g:material_terminal_italics = 1
+" variants: default, palenight, ocean, lighter, darker, default-community,
+           " palenight-community, ocean-community, lighter-community,
+           " darker-community
+" let g:material_theme_style = 'darker'
+" colorscheme material
 
-" Uncomment gruvbox theme as a default 
-autocmd vimenter * ++nested colorscheme gruvbox
+if (has('termguicolors'))
+  set termguicolors
+endif
+
+" variants: mirage, dark
+" let ayucolor="mirage"
+" colorscheme ayu
+
+" Create shortcut Ctrl+n for open/close NERDTreeToggle
+nnoremap <C-x> :NERDTreeToggle<CR>
+
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+nmap <C-z> :TagbarToggle<CR>
+
+" set mouse=a  " enable mouse
 
 " Turn on syntax highlighting
 syntax on
@@ -113,13 +126,6 @@ set smartcase
 set showmatch
 map <leader><space> :let @/=''<cr> " clear search
 
-" Remap help key.
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-nnoremap <F1> :set invfullscreen<CR>
-vnoremap <F1> :set invfullscreen<CR>
-
-" Textmate holdouts
-
 " Formatting
 map <leader>q gqip
 
@@ -130,80 +136,30 @@ set listchars=tab:▸\ ,eol:¬
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-" Create shortcut Ctrl+n for open/close NERDTreeToggle
-nnoremap <C-n> :NERDTreeToggle<CR>
-
 " let g:indent_guides_enable_on_vim_startup = 1
 let g:move_key_modifier = 'C'
 
-" syntastic opts
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_go_checkers=['golint', 'gofmt']
-let g:syntastic_python_checkers=['pylint', 'pep8', 'flake8']
-let g:syntastic_sh_checkers=['shellcheck']
-let g:syntastic_yaml_checkers = [ "yamllint" ]
-let g:syntastic_quiet_messages = { "type": "style" }
-
-"=====================================================
-" Python-mode settings
-"=====================================================
-" отключаем автокомплит по коду (у нас вместо него используется jedi-vim)
-" let g:pymode_rope = 0
-" let g:pymode_rope_completion = 0
-" let g:pymode_rope_complete_on_dot = 0
-
-" документация
-" let g:pymode_doc = 0
-" let g:pymode_doc_key = 'K'
-
-" проверка кода
-" let g:pymode_lint = 1
-" let g:pymode_lint_checker = 'pyflakes,pep8'
-" let g:pymode_lint_ignore="E501,W601,C0110"
-
-" провека кода после сохранения
-" let g:pymode_lint_write = 1
-
-" поддержка virtualenv
-" let g:pymode_virtualenv = 1
-
-" установка breakpoints
-" let g:pymode_breakpoint = 1
-" let g:pymode_breakpoint_key = '<leader>b'
-
-" подстветка синтаксиса
-" let g:pymode_syntax = 1
-" let g:pymode_syntax_all = 1
-" let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-" let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-" отключить autofold по коду
-" let g:pymode_folding = 0
-
-" возможность запускать код
-" let g:pymode_run = 0
-
-" Disable choose first function/method at autocomplete
-" let g:jedi#popup_select_first = 0
-
-
-"Не в список плагинов
-let g:airline_powerline_fonts = 1 "Включить поддержку Powerline шрифтов
-let g:airline#extensions#keymap#enabled = 0 "Не показывать текущий маппинг
-let g:airline_section_z = "\ue0a1:%l/%L Col:%c" "Кастомная графа положения курсора
-let g:Powerline_symbols='unicode' "Поддержка unicode
-let g:airline#extensions#xkblayout#enabled = 0 "Про это позже расскажу
+" Airline settings
+let g:airline_powerline_fonts = 1 
+let g:airline#extensions#keymap#enabled = 0
+let g:airline_section_z = "\ue0a1:%l/%L Col:%c"
+let g:Powerline_symbols='unicode'
+let g:airline#extensions#xkblayout#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 
 " Terraform settings
 let g:terraform_fmt_on_save=1
 let g:terraform_align=1
+
+
+" Leader bind to space
+" let mapleader = ","
+
+" Netrw file explorer settings
+let g:netrw_banner = 0 " hide banner above files
+let g:netrw_liststyle = 3 " tree instead of plain view
+let g:netrw_browse_split = 3 " vertical split window when Enter pressed on file
+
+" turn off search highlight
+" nnoremap ,<space> :nohlsearch<CR>
