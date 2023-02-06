@@ -23,4 +23,3 @@
 |Syntax|Description|
 |------|-------|
 |fp| open fzf search with preview|
-
