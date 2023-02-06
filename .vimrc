@@ -30,8 +30,6 @@ Plug 'hashivim/vim-terraform' " Terraform plugin
 Plug 'juliosueiras/vim-terraform-completion' " Terraform auto-completion plugin
 Plug 'junegunn/fzf.vim' " Searching through directories
 
-" Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-
 call plug#end()
 
 colorscheme gruvbox
