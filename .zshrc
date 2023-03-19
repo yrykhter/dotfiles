@@ -77,7 +77,7 @@ SOLARIZED_THEME="dark"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf zsh-kubectl-prompt sudo zsh-autosuggestions web-search kubectl gcloud zsh-syntax-highlighting copypath copybuffer copyfile)
+plugins=(git fzf zsh-kubectl-prompt sudo zsh-autosuggestions kubectl gcloud zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
