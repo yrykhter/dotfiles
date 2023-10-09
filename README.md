@@ -23,3 +23,5 @@
 |Syntax |Description |
 |------ |----------------------- |
 |fp     | open fzf search with preview|
+
+Made with ❤️ for DevOps Engineers by DevOps Engineer
