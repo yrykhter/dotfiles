@@ -1,4 +1,4 @@
-# Key bindings for dotfiles
+# Key bindings
 
 ## Tmux
 
@@ -11,12 +11,9 @@
 |C-n      | create new session    |
 |C-w      | create new window     |
 
-## Vim
+## Use Neovim instead of Vim
 
-|Syntax |Description    |
-|------ |-------------- |
-|C-x    | open NERDTree |
-|C-z    | open Tagbar   |
+(Add README about bindings!!!)
 
 ## Zsh
 
