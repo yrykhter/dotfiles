@@ -1,3 +1,4 @@
+-- Update that file!!
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
