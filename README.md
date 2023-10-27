@@ -1,4 +1,6 @@
-# Key bindings
+# REWRITE THAT README!!!!!
+
+## Key bindings
 
 ## Tmux
 
