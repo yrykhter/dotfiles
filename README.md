@@ -13,14 +13,14 @@
 |C-n      | create new session    |
 |C-w      | create new window     |
 
-## Use Neovim instead of Vim
+## Neovim
 
-(Add README about bindings!!!)
-
-## Zsh
+In my case, <leader> is a space.
 
 |Syntax |Description |
-|------ |----------------------- |
-|fp     | open fzf search with preview|
+|------ |----------- |
+|<leader>pv | come back from file to directories/project view |
+|<leader>gs | git status (need git repo) (figutive) |
+|<leader>a | add to harpoon |
 
 Made with ❤️ for DevOps Engineers by DevOps Engineer
