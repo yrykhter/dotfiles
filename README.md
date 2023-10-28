@@ -15,12 +15,12 @@
 
 ## Neovim
 
-In my case, <leader> is a space.
+In my case, ==leader== is a space.
 
 |Syntax |Description |
 |------ |----------- |
-|<leader>pv | come back from file to directories/project view |
-|<leader>gs | git status (need git repo) (figutive) |
-|<leader>a | add to harpoon |
+|==leader==pv | come back from file to directories/project view |
+|==leader==gs | git status (need git repo) (figutive) |
+|==leader==a | add to harpoon |
 
 Made with ❤️ for DevOps Engineers by DevOps Engineer
