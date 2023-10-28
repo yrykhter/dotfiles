@@ -1,0 +1,24 @@
+-- git status
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+-- local opts = { remap = false, noremap = true }
+-- -- git checkout
+-- vim.keymap.set("n", "<leader>gco", "<CMD>:Git checkout<CR>", opts)
+--
+-- -- git add
+-- vim.keymap.set("n", "<leader>ga", "<CMD>:Gwrite<CR>", opts)
+--
+-- -- git commit
+-- vim.keymap.set("n", "<leader>gc", "<CMD>:Git commit<CR>", opts)
+--
+-- -- git push
+-- vim.keymap.set("n", "<leader>gp", ":Git push -u origin ", opts)
+--
+-- -- git pull rebase always
+-- vim.keymap.set("n", "<leader>gP", ":Git  pull --rebase", opts)
+--
+-- -- git log
+-- vim.keymap.set("n", "<leader>gl", "<CMD>:Gclog<CR>", opts)
+--
+-- -- git diff
+-- vim.keymap.set("n", "<leader>gd", "<CMD>:Gvdiffsplit<CR>", opts)
