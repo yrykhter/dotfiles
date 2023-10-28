@@ -1,8 +1,8 @@
-# REWRITE THAT README!!!!!
+# REWRITE THAT README
 
 ## Key bindings
 
-## Tmux
+## Tmux (use Tmux in Neovim ???)
 
 |Syntax   |Description            |
 |-------- |---------------------- |
