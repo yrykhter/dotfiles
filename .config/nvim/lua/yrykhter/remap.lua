@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Quit all opened buffers
 vim.keymap.set("n", "<leader>Q", "<cmd>qa!<cr>", { silent = true, desc = "[Q]uit nvim" })
 
+-- Create new session in tmux
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
 -- Move lines where we need in Visual mode
 vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
