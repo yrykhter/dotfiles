@@ -5,7 +5,7 @@
 |Syntax   |Description            |
 |-------- |---------------------- |
 |C-a      | prefix                |
-|prefix r | reload  .tmux.conf    |
+|prefix r | reload .tmux.conf     |
 |C-g      | horizontal splits     |
 |C-v      | vertical splits       |
 |C-n      | create new session    |
@@ -24,6 +24,7 @@ In my case, ==leader== is a space.
 |==leader==x  | chmod +x to the file                            |
 |==leader==Q  | quit nvim (???)                                 |
 |C-w h/l      | switch between windows                          |
+|C-f          | create new session in tmux                      |
 |------------ |------------------------------------------------ |
 |==leader==a  | add file (harpoon)                              |
 |C-e          | quick menu (harpoon)                            |
