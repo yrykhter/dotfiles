@@ -43,4 +43,4 @@ In my case, ==leader== is a space.
 |C-y          | complete autocompletion (autocomplete)          |
 |C-Space      | complete the command (autocomplete)             |
 
-Made with ❤️ for DevOps Engineers by DevOps Engineer
+Made with ❤️  for DevOps Engineers by DevOps Engineer
