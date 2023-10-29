@@ -1,6 +1,4 @@
-# REWRITE THAT README
-
-## Key bindings
+# Key bindings
 
 ## Tmux (use Tmux in Neovim ???)
 
@@ -17,23 +15,32 @@
 
 In my case, ==leader== is a space.
 
-|Syntax |Description |
-|------ |----------- |
+|Syntax       |Description                                      |
+|------------ |------------------------------------------------ |
 |==leader==pv | come back from file to directories/project view |
-|==leader==gs | git status (need git repo) (figutive) |
-|------|------|
-|==leader==a | add file to harpoon |
-|C-e | quick menu |
-|C-h | 1st file in navigation tab |
-|C-t | 2nd file in navigation tab |
-|C-n | 3rd file in navigation tab |
-|C-s | 4th file in navigation tab |
-|------|------|
-|C-w h/l | switch between windows |
-|==leader==pf | find files in telescope |
-|==leader==ps | grep by phrase in telescope |
-|C-p | git find files in telescope |
-|------|------|
-|==leader==u | undotree for my changes (undotree) |
+|==leader==gs | git status (need git repo) (figutive)           |
+|==leader==zm | zen mode                                        |
+|==leader==pj | pretty json                                     |
+|==leader==x  | chmod +x to the file                            |
+|==leader==Q  | quit nvim (???)                                 |
+|C-w h/l      | switch between windows                          |
+|------------ |------------------------------------------------ |
+|==leader==a  | add file (harpoon)                              |
+|C-e          | quick menu (harpoon)                            |
+|C-h          | 1st file in navigation tab (harpoon)            |
+|C-t          | 2nd file in navigation tab (harpoon)            |
+|C-n          | 3rd file in navigation tab (harpoon)            |
+|C-s          | 4th file in navigation tab (harpoon)            |
+|------------ |------------------------------------------------ |
+|==leader==pf | find files (telescope)                          |
+|==leader==ps | grep by phrase (telescope)                      |
+|C-p          | git find files (telescope)                      |
+|------------ |------------------------------------------------ |
+|==leader==u  | undotree for my changes (undotree)              |
+|------------ |------------------------------------------------ |
+|C-p          | move to the previous item (autocomplete)        |
+|C-n          | move to the next item (autocomplete)            |
+|C-y          | complete autocompletion (autocomplete)          |
+|C-Space      | complete the command (autocomplete)             |
 
-Made with ❤️ for DevOps Engineers by DevOps Engineer
+Made with ❤️  for DevOps Engineers by DevOps Engineer
