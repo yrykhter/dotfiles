@@ -8,26 +8,25 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="eastwood"
 #ZSH_THEME="simple"
-ZSH_THEME="gruvbox"
-SOLARIZED_THEME="dark"
+#ZSH_THEME="pure"
+ZSH_THEME="spaceship"
+
+# Use nvim as default editor for Git
+git config --global core.editor nvim
 
 # Plugins
-plugins=(git fzf zsh-kubectl-prompt sudo zsh-autosuggestions kubectl gcloud zsh-syntax-highlighting)
+plugins=(git zsh-kubectl-prompt sudo zsh-autosuggestions kubectl gcloud zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
-
-# Aliases
-alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias ll="colorls -la"
+alias tf="terraform"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/Yauheni_Rykhter/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Yauheni_Rykhter/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/Yauheni_Rykhter/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Yauheni_Rykhter/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# The next line enables fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
