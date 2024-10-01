@@ -15,7 +15,7 @@ ZSH_THEME="spaceship"
 git config --global core.editor nvim
 
 # Plugins
-plugins=(git zsh-kubectl-prompt sudo zsh-autosuggestions kubectl gcloud zsh-syntax-highlighting)
+plugins=(git sudo zsh-kubectl-prompt kubectl gcloud zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -23,6 +23,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias ll="colorls -la"
 alias tf="terraform"
+
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # The next line updates PATH for the Google Cloud SDK.
